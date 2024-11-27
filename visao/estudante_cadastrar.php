@@ -6,7 +6,7 @@
 ?>
 </head>
 <body>
-<form name="formCadastrar" action="" method="post">
+<form name="formCadastrar" action="../controle/estudante_salvar.php" method="post">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">

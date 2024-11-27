@@ -1,4 +1,5 @@
 <?php
+include "conexao_bd.php";
 class Estudante
 {
     //Atributos
@@ -6,6 +7,25 @@ class Estudante
     private $nome;
     private $curso;
     private $idade;
+
+    // Método construtor
+    public function __construct($cpf, $nome, $curso, $idade)
+    {
+        $this->cpf = $cpf;
+        $this->nome = $nome;
+        $this->curso = $curso;
+        $this->idade = $idade;
+    }
+
+    // Métodos da classe
+    public function matricular()
+    {
+        $sql = "INSERT INTO estudante(cpf,nome,curso,idade) ";
+        $sql .= "VALUES('$this->cpf','$this->nome','$this->curso','$this->idade')";
+
+        return executarComando($sql);
+        
+    }
 
     //Métodos GETs e SETs
     
@@ -87,7 +107,7 @@ class Estudante
     public function setIdade($idade)
     {
         $this->idade = $idade;
-
+    
         return $this;
     }
 }
